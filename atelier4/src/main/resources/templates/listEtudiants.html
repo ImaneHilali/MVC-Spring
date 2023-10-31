@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Students</title>
+</head>
+<h3> List Of Students </h3>
+
+<table>
+  <th>ID</th>
+  <th>Nom</th>
+  <th>Prenom</th>
+  <th>Date de naissance</th>
+
+  <tr th:each="etudiant:${listetudiants}">
+    <td th:text="${etudiant.idEtudiant}"></td>
+    <td th:text="${etudiant.nom}"></td>
+    <td th:text="${etudiant.prenom}"></td>
+    <td th:text="${etudiant.date_naissance}"></td>
+
+    <td> <a th:href="@{/etudiant/update/{idEtudiant}(idEtudiant=${etudiant.idEtudiant})}"
+            class="btn btn-primary">Update</a>
+      <a th:href="@{/etudiant/delete/{idEtudiant}(idEtudiant=${etudiant.idEtudiant})}"
+         class="btn btn-danger">Delete</a>
+      <a th:href="@{/absence/add/{idEtudiant}(idEtudiant=${etudiant.idEtudiant})}"
+         class="btn btn-danger"> Add Absence</a>
+    </td>
+  </tr>
+</table>
+<br/>
+<a href="/etudiant/add">Add Etudiant</a> <br>
+<a href="/classe/addEtudiantToClasse">Add Etudiant To a Class</a> <br>
+<a href="/classe/all">Check Class</a> <br>
+
+<body>
+</body>
+</html>

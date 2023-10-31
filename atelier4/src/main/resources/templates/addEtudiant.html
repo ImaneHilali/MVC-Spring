@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Etudiant </title>
+</head>
+<body>
+<h2>Add Etudiant</h2>
+<br/>
+<form th:action="@{/etudiant/save}" th:object="${etudiant}" >
+    <input type="hidden" name="idEtudiant" th:value="${etudiant.idEtudiant}">
+    <lable>Nom</lable>
+    <input type="text" name="nom" th:value="${etudiant.nom}">  <br/><br/>
+
+    <lable>Prenom</lable>
+    <input type="text" name="prenom" th:value="${etudiant.prenom}" >  <br/><br/>
+
+    <lable>Date de naissance</lable>
+    <input type="text" name="date_naissance" th:value="${etudiant.date_naissance}" > <br/><br/>
+
+    <input type="submit"  th:value="save"> <br/>
+</form>
+
+</body>
+</html>

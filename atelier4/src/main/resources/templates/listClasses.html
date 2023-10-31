@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of classes</title>
+</head>
+<body>
+<h3> List Of Students </h3>
+<br/>
+<table>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Niveau</th>
+    <th>Actions</th>
+
+    <tr th:each="classe:${listclasses}">
+        <td th:text="${classe.idClasse}"></td>
+        <td th:text="${classe.nom}"></td>
+        <td th:text="${classe.niveau}"></td>
+
+        <td> <a th:href="@{/classe/update/{idClasse}(idClasse=${classe.idClasse})}"
+                class="btn btn-primary">Update</a>
+            <a th:href="@{/classe/delete/{idClasse}(id_classe=${classe.idClasse})}"
+               class="btn btn-danger">Delete</a>
+            <a th:href="@{'/etudiant/all'}">View Students</a>
+            <a href="/classe/addEtudiantToClasse">Add Etudiant To a Class</a> <br>
+        </td>
+    </tr>
+</table>
+<br/>
+<a href="/classe/add">Add Class</a>
+</body>
+</html>

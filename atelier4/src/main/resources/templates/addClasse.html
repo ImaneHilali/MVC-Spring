@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Classe</title>
+</head>
+<body>
+<h2>Add Class</h2>
+
+<form th:action="@{/classe/save}" th:object="${classe}" >
+  <input type="hidden" name="idClasse" th:value="${classe.idClasse}">
+
+  <lable>Nom</lable>
+  <input type="text" name="nom" th:value="${classe.nom}"> <br/><br/>
+
+  <lable>Niveau</lable>
+  <input type="text" name="niveau" th:value="${classe.niveau}" > <br/><br/>
+
+  <input type="submit"  th:value="save"> <br/>
+</form>
+
+</body>
+</html>
+
+

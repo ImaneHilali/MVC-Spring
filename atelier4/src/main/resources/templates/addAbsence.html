@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add Absence</title>
+</head>
+<body>
+<h2>Add Absence to an Etudiant </h2>
+<br/>
+<form th:action="@{/absence/save}" th:object="${absence}" >
+  <input type="hidden" name="idAbsence" th:value="${absence.idAbsence}">
+    <lable>Date</lable>
+  <input type="text" name="date" th:value="${absence.date}"> <br/><br/>
+
+  <lable>Heure</lable>
+  <input type="text" name="heure" th:value="${absence.heure}" > <br/><br/>
+
+  <input type="submit"  th:value="save"> <br/>
+</form>
+
+</body>
+</html>

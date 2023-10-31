@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Etudiant to Class</title>
+</head>
+<body>
+
+
+<h2>Add Student to Class</h2>
+<br/>
+<form th:action="@{/classe/addEtudiantToClasse}" th:object="${etudiant}">
+
+    <label> Class ID:</label>
+    <input type="text" id="idClasse" name="idClasse" th:value="${etudiant.idClass}">
+    <br><br/>
+    <label>Etudiant ID:</label>
+    <input type="text" id="idEtudiant" name="idEtudiant" th:value="${etudiant.idEtudiant}"><br><br>
+    <input type="submit"  th:value="Add Student to Class">
+
+</form>
+</body>
+</html>

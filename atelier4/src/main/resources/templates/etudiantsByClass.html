@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>etudiants By Class</title>
+</head>
+<body>
+    <h3>Students in Class</h3>
+    <br/>
+    <p>Class ID: <span th:text="${etudiants[0].classe.idClasse}"></span></p>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="etudiant : ${etudiants}">
+            <td th:text="${etudiants.id_etudiant}"></td>
+            <td th:text="${etudiants.nom + ' ' + etudiants.prenom}"></td>
+        </tr>
+    </table>
+</body>
+</html>
